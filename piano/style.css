@@ -1,0 +1,48 @@
+body{
+    background-color: aquamarine;
+}
+
+#piano{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 0.5vmin solid black;
+    width: 147vmin;
+    height: 52vmin;
+    
+}
+
+.whiteNote{
+    background-color: white;
+    border-right: 0.1vmin solid black;
+    box-sizing: border-box;
+    height: 100%;
+    width:10.5vmin;
+    float: left;
+    transition: all .3s;
+    text-align: center;
+}
+
+
+
+.blackNote{
+    background-color: #777;
+    height: 65%;
+    width: 5.25vmin;
+    transition: all .3s;
+    transform: translateX(7.25vmin);
+}
+
+.play{
+  
+   background-color: lightgray;  
+}
+
+span{
+    position: absolute;
+    bottom: 0;
+    font-weight: bold;
+}

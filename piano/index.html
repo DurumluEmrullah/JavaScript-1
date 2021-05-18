@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <h1 style="background-color: aliceblue; text-align: center; font-size: 50px; font-weight: bold; text-transform: uppercase;">JavaScript#1</h1>
+    <div id="piano">
+        <div class="whiteNote button" data-key="65">
+            <div class="blackNote button" data-key="83" style="text-align: center;  box-sizing: border-box; ">
+             <span >S</span> 
+               
+            </div>
+            <span>A</span> 
+        </div>
+        
+         <div class="whiteNote button" data-key="68">
+            <div class="blackNote button" data-key="70" ><span>F</span>
+               
+            </div><span>D</span> 
+        </div>
+        
+         <div class="whiteNote button" data-key="87">
+            <span>W</span>
+        </div>
+        
+         <div class="whiteNote button" data-key="69">
+            <div class="blackNote button" data-key="82">
+               <span>R</span>
+            </div>
+            <span>E</span>
+        </div>
+        
+         <div class="whiteNote button" data-key="71">
+            <div class="blackNote button" data-key="84">
+               <span>T</span>
+            </div>
+            <span>G</span>
+        </div>
+        
+         <div class="whiteNote button" data-key="72">
+            <div class="blackNote button" data-key="89">
+               <span>Y</span>
+            </div>
+            <span>H</span>
+        </div>
+        
+         <div class="whiteNote button" data-key="32">
+           <span>Spc</span>
+        </div>
+        
+         <div class="whiteNote button" data-key="77">
+            <div class="blackNote button" data-key="74">
+               <span>J</span>
+            </div>
+            <span>M</span>
+        </div>
+        
+         <div class="whiteNote button" data-key="75">
+            <div class="blackNote button" data-key="73">
+               <span>I</span>
+            </div>
+            <span>K</span>
+        </div>
+        
+         <div class="whiteNote button" data-key="79">
+             <span>O</span>
+        </div>
+        
+         <div class="whiteNote button" data-key="78">
+            <div class="blackNote button" data-key="66">
+               <span>B</span>
+            </div>
+            <span>N</span>
+        </div>
+        
+         <div class="whiteNote button" data-key="88">
+            <div class="blackNote button" data-key="67">
+               <span>C</span>
+            </div>
+            <span>X</span>
+        </div>
+        
+         <div class="whiteNote button" data-key="86">
+            <div class="blackNote button" data-key="76">
+               <span>L</span>
+            </div>
+            <span>V</span>
+        </div>
+        
+         <div class="whiteNote button" data-key="90">
+            <span>Z</span>
+        </div>
+        
+        
+    </div>
+    
+    <audio data-key="65" src="sounds/A.mp3"></audio>
+    <audio data-key="66"  src="sounds/B.mp3"></audio>
+    <audio data-key="67"  src="sounds/C.mp3"></audio>
+    <audio data-key="68"  src="sounds/D.mp3"></audio>
+    <audio data-key="69"  src="sounds/E.mp3"></audio>
+    <audio data-key="70"  src="sounds/F.mp3"></audio>
+    <audio data-key="71"  src="sounds/G.mp3"></audio>
+    <audio data-key="72"  src="sounds/H.mp3"></audio>
+    <audio data-key="73"  src="sounds/I.mp3"></audio>
+    <audio data-key="74"  src="sounds/J.mp3"></audio>
+    <audio data-key="75"  src="sounds/K.mp3"></audio>
+    <audio data-key="76"  src="sounds/L.mp3"></audio>
+    <audio data-key="77"  src="sounds/M.mp3"></audio>
+    <audio data-key="78"  src="sounds/N.mp3"></audio>
+    <audio data-key="79"  src="sounds/O.mp3"></audio>
+    <audio data-key="82"  src="sounds/R.mp3"></audio>
+    <audio data-key="83"  src="sounds/S.mp3"></audio>
+    <audio data-key="32"  src="sounds/spc.mp3"></audio>
+    <audio data-key="84"  src="sounds/T.mp3"></audio>
+    <audio data-key="86"  src="sounds/V.mp3"></audio>
+    <audio data-key="87"  src="sounds/W.mp3"></audio>
+    <audio data-key="88"  src="sounds/X.mp3"></audio>
+    <audio data-key="89"  src="sounds/Y.mp3"></audio>
+    <audio data-key="90"  src="sounds/z.mp3"></audio>
+    
+    
+    <script> 
+            window.addEventListener('keydown',function(e){
+            
+            const audio =document.querySelector(`audio[data-key='${e.keyCode}']`);
+            const key=document.querySelector(`.button[data-key='${e.keyCode}']`);
+            if(!audio) return;
+            audio.currentTime=0;
+            audio.play();
+                
+            key.classList.add("play")
+                
+            
+            function removeTransition(e){
+               this.classList.remove("play");
+            }    
+                
+            const keys =document.querySelectorAll('.button');
+                keys.forEach(key=>key.addEventListener('transitionend',removeTransition));
+        });
+    </script>
+    <scrip src="script.js"></scrip>
+</body>
+</html>
